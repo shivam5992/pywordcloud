@@ -1,0 +1,7 @@
+*.pyc
+
+dist
+
+pywordcloud.egg-info
+
+MANIFEST
