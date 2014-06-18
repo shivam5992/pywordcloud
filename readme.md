@@ -15,7 +15,7 @@ Features
 Install
 -------
 
-You can install PyTagCloud either via the Python Package Index (PyPI) or from source.
+You can install pywordcloud either via the Python Package Index (PyPI) or from source.
 
 To install using pip:
 
