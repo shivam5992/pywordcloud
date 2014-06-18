@@ -5,3 +5,5 @@ dist
 pywordcloud.egg-info
 
 MANIFEST
+
+setup.cfg
