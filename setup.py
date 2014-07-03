@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name="pywordcloud",
-    version="0.2",
+    version="0.2.1",
     author="Shivam Bansal",
     author_email="shivam5992@gmail.com",
     packages=["pywordcloud"],

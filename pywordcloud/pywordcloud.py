@@ -35,7 +35,6 @@ def create(text, outfile="output.html", uppercase=False, showfreq=True, frequenc
 
 	freq = frequency
 	a = getKeywords(article, case, freq, removepunct)
-	
 	random.shuffle(a)
 	b = [x[1] for x in a]
 	minFreq = min(b)
@@ -67,15 +66,19 @@ def create(text, outfile="output.html", uppercase=False, showfreq=True, frequenc
 			span += '<a href=#><span class="word'+str(index)+'" id="tag'+str(index)+'">&nbsp;' + tag + "&nbsp;</span></a>\n"	
 		
 
-		freqTag = int(item[1])
-		fontMax = maxfont
-		fontMin = minfont
-		K = (freqTag - minFreq)/(maxFreq - minFreq)
-		frange = fontMax - fontMin
-		C = 4
-		
-		K = float(freqTag - minFreq)/(maxFreq - minFreq)
-		size = fontMin + (C*float(K*frange/C))
+		try:
+			freqTag = int(item[1])
+			fontMax = maxfont
+			fontMin = minfont
+			K = (freqTag - minFreq)/(maxFreq - minFreq)
+			frange = fontMax - fontMin
+			C = 4
+			
+			K = float(freqTag - minFreq)/(maxFreq - minFreq)
+			size = fontMin + (C*float(K*frange/C))
+		except:
+			print "!!! Please input a text with more number of words !!!"
+			sys.exit(0)
 
 		css += '#tag'+str(index)+'{font-size: '+ str(size) +'em;color: ' + colors[int(k%colsize)]+'}\n'
 	 	css += '#tag'+str(index)+':hover{color:' + hovercolor + '}\n'
@@ -96,14 +99,4 @@ def create(text, outfile="output.html", uppercase=False, showfreq=True, frequenc
 	f.write(message)
 	f.close
 	f.flush()
-
-
-
-
-
-
-
-
-
-
-
+	print "Successfully generated word cloud in '" + outfile + "' file."
