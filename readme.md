@@ -62,7 +62,7 @@ Usage
 			width="1000px", 
 			height="400px",
 			#colorlist = ["red","blue","yellow","black","green"] 
-			)"400px", colorlist = ["red","blue","yellow","black","green	"] )
+			)
 
 Arguments
 ---------
